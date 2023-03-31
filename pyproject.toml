@@ -1,9 +1,11 @@
 [tool.poetry]
 name = "parakeet"
 version = "0.1.0"
-description = ""
+description = "Parquet to CSV command line tool"
 authors = ["Alfie Bowman <alfiebowman@protonmail.com>"]
 readme = "README.md"
+homepage = "https://github.com/A1fus/parakeet
+repository = "https://github.com/A1fus/parakeet"
 
 [tool.poetry.dependencies]
 python = "^3.7"
