@@ -9,7 +9,10 @@ repository = "github.com/A1fus/parakeet"
 
 [tool.poetry.dependencies]
 python = "^3.7"
+click = "^8.1.3"
 
+[tool.poetry.scripts]
+parakeet = "parakeet.console:main"
 
 [build-system]
 requires = ["poetry-core"]
