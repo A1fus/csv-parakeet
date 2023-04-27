@@ -1,9 +1,11 @@
-import click.testing
-from parakeet import console
+import os
 import shutil
 from pathlib import Path
-import os
+
+import click.testing
 import pandas as pd
+
+from parakeet import console
 
 
 def setup_function():
