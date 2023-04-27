@@ -19,5 +19,5 @@ def teardown_function():
 
 def test_main_succeeds():
     runner = click.testing.CliRunner()
-    result = runner.invoke(console.main, args=["test.csv","testfiles/test.parquet"])
+    result = runner.invoke(console.main, args=["testfiles/test.csv","testfiles/test.parquet"])
     assert result.exit_code == 0
