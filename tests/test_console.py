@@ -3,10 +3,12 @@ from parakeet import console
 import shutil
 from pathlib import Path
 import os
+import pandas as pd
 
 
 def setup_function():
     os.makedirs("./testfiles",exist_ok=True)
+    pd.DataFrame(data={"a":[0,1,2]}).to_csv("./testfiles/test.csv")
 
 
 def teardown_function():
