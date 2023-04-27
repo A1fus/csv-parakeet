@@ -24,6 +24,7 @@ def black(session):
     session.install("black")
     session.run("black", *args)
 
+
 @nox.session(python="3.10")
 def isort(session):
     args = session.posargs or locations
