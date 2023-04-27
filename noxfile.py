@@ -1,14 +1,14 @@
 import nox
 
+locations = "src", "tests", "noxfile.py"
+nox.options.sessions = "lint", "tests"
+
 
 @nox.session(python=["3.9", "3.10"])
 def tests(session):
     args = session.posargs or ["--cov"]
     session.run("poetry", "install", external=True)
     session.run("pytest", *args)
-
-
-locations = "src", "tests", "noxfile.py"
 
 
 @nox.session(python=["3.9", "3.10"])
