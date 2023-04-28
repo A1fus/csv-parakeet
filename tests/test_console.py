@@ -19,9 +19,9 @@ def teardown_function():
         shutil.rmtree(dirpath)
 
 
-def test_main_succeeds():
+def test_c2p_succeeds():
     runner = click.testing.CliRunner()
     result = runner.invoke(
-        console.main, args=["testfiles/test.csv", "testfiles/test.parquet"]
+        console.c2p, args=["testfiles/test.csv", "testfiles/test.parquet"]
     )
     assert result.exit_code == 0
