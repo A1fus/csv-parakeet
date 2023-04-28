@@ -52,7 +52,7 @@ def safety(session):
 
 @nox.session(python="3.10")
 def mutmut(session):
-    args = "run", 
+    args = ("run",)
     install_with_constraints(session, "mutmut")
     session.run("poetry", "install", external=True)
     session.run("mutmut", *args)
