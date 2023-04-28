@@ -3,7 +3,7 @@ import tempfile
 import nox
 
 locations = "src", "tests", "noxfile.py"
-nox.options.sessions = "lint", "tests", "safety"
+nox.options.sessions = "lint", "tests", "safety", "mutmut"
 
 
 def install_with_constraints(session, *args, **kwargs):
@@ -13,6 +13,7 @@ def install_with_constraints(session, *args, **kwargs):
             "export",
             "--dev",
             "--format=requirements.txt",
+            "--without-hashes",
             f"--output={requirements.name}",
             external=True,
         )
@@ -47,6 +48,14 @@ def safety(session):
         )
         install_with_constraints(session, "safety")
         session.run("safety", "check", f"--file={requirements.name}", "--full-report")
+
+
+@nox.session(python="3.10")
+def mutmut(session):
+    args = "run", 
+    install_with_constraints(session, "mutmut")
+    session.run("poetry", "install", external=True)
+    session.run("mutmut", *args)
 
 
 @nox.session(python="3.10")
