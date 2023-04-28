@@ -12,3 +12,10 @@ repos:
         entry: poetry run black
         language: system
         types: [python]
+-   repo: local
+    hooks:
+    -   id: isort
+        name: isort
+        entry: poetry run isort
+        language: system
+        types: [python]
