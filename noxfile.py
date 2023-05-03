@@ -34,7 +34,7 @@ def lint(session):
     session.run("flake8", *args)
 
 
-@nox.session(python="3.10")
+@nox.session(python="3.9")
 def safety(session):
     with tempfile.NamedTemporaryFile() as requirements:
         session.run(
