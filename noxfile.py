@@ -3,7 +3,7 @@ import tempfile
 import nox
 
 locations = "src", "tests", "noxfile.py"
-nox.options.sessions = "lint", "tests", "safety", "mutmut"
+nox.options.sessions = "lint", "tests", "safety",
 
 
 def install_with_constraints(session, *args, **kwargs):
