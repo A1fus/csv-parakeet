@@ -7,7 +7,7 @@ from . import __version__
 @click.group()
 @click.version_option(version=__version__)
 def parakeet() -> None:
-    return None
+    return None  # pragma: no cover
 
 
 @parakeet.command()

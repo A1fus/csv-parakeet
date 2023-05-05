@@ -26,6 +26,12 @@ def teardown_function():
         shutil.rmtree(dirpath)
 
 
+def test_parakeet_succeeds():
+    runner = click.testing.CliRunner()
+    result = runner.invoke(console.parakeet)
+    assert result.exit_code == 0
+
+
 def test_c2p_succeeds():
     runner = click.testing.CliRunner()
     result = runner.invoke(
