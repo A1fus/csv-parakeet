@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "parakeet"
+name = "csv-parakeet"
 version = "0.1.0"
 description = "Parquet to CSV command line tool"
 authors = ["Alfie Bowman <alfiebowman@protonmail.com>"]
 readme = "README.md"
-homepage = "github.com/A1fus/parakeet"
-repository = "github.com/A1fus/parakeet"
+homepage = "github.com/A1fus/csv-parakeet"
+repository = "github.com/A1fus/csv-parakeet"
 
 [tool.poetry.dependencies]
 python = "^3.8.1"
@@ -14,7 +14,7 @@ pandas = "^2.0.0"
 pyarrow = "^11.0.0"
 
 [tool.poetry.scripts]
-parakeet = "parakeet.console:parakeet"
+parakeet = "csv_parakeet.console:parakeet"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.3.1"
@@ -33,7 +33,7 @@ source = ["src", "*/site-packages"]
 
 [tool.coverage.run]
 branch = true
-source = ["parakeet"]
+source = ["csv_parakeet"]
 
 [tool.coverage.report]
 show_missing = true
