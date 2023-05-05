@@ -1,6 +1,8 @@
 # CSV-Parakeet
 ![parakeet](https://user-images.githubusercontent.com/11004160/236465574-b17acf11-4bf5-46f9-9ab6-b01e5527d60b.jpeg)
 
+[![Tests](https://github.com/A1fus/csv-parakeet/actions/workflows/tests.yaml/badge.svg)](https://github.com/A1fus/csv-parakeet/actions/workflows/tests.yaml)
+
 A simple command line tool to convert csv files to parquet, and vice versa.
 
 ## Installation
