@@ -8,7 +8,7 @@ Requirements:
 - Python >=3.8
 
 ```bash
-pip install --user parakeet
+pip install --user csv-parakeet
 ```
 
 ## Usage
