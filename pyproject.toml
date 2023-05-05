@@ -4,8 +4,8 @@ version = "0.1.0"
 description = "Parquet to CSV command line tool"
 authors = ["Alfie Bowman <alfiebowman@protonmail.com>"]
 readme = "README.md"
-homepage = "github.com/A1fus/csv-parakeet"
-repository = "github.com/A1fus/csv-parakeet"
+homepage = "https://github.com/A1fus/csv-parakeet"
+repository = "https://github.com/A1fus/csv-parakeet"
 
 [tool.poetry.dependencies]
 python = "^3.8.1"
