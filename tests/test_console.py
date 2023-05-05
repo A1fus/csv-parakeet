@@ -6,7 +6,7 @@ import click.testing
 import pandas as pd
 import pytest
 
-from parakeet import console
+from csv_parakeet import console
 
 
 @pytest.fixture
