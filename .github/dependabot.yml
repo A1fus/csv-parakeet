@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: "pip"
-    directory: "/" 
+    directory: "/"
     schedule:
       interval: "weekly"
       day: "friday"
@@ -10,8 +10,8 @@ updates:
       prefix: "poetry prod"
       prefix-development: "poetry dev"
       include: "scope"
-  - package-ecosystem: "github-actions" 
-    directory: "/" 
+  - package-ecosystem: "github-actions"
+    directory: "/"
     schedule:
       interval: "weekly"
       day: "friday"
