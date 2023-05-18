@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/" 
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      time: "09:00"
+    commit-message:
+      prefix: "poetry prod"
+      prefix-development: "poetry dev"
+      include: "scope"
+  - package-ecosystem: "github-actions" 
+    directory: "/" 
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      time: "09:00"
+    commit-message:
+      prefix: "github-actions"
+      include: "scope"
