@@ -21,8 +21,12 @@ def setup_function():
     input_df.to_csv("./testfiles/test_input.csv", index=False)
     input_df_2.to_csv("./testfiles/test_input_2.csv", index=False)
     input_df.to_parquet("./testfiles/test_input.parquet", index=False)
+    input_df_2.to_parquet("./testfiles/test_input_2.parquet", index=False)
     pd.concat([input_df, input_df_2], ignore_index=True).to_parquet(
-        "./testfiles/expected_output_concat.parquet"
+        "./testfiles/expected_output_concat.parquet", index=False
+    )
+    pd.concat([input_df, input_df_2], ignore_index=True).to_csv(
+        "./testfiles/expected_output_concat.csv", index=False
     )
 
 
@@ -65,3 +69,18 @@ def test_p2c_output_correct(test_df):
     saved_df = pd.read_csv("testfiles/test_output.csv")
     input_df = test_df
     pd.testing.assert_frame_equal(saved_df, input_df)
+
+
+def test_p2c_multifile_output_correct(test_df):
+    runner = click.testing.CliRunner()
+    runner.invoke(
+        console.p2c,
+        args=[
+            "testfiles/test_input.parquet",
+            "testfiles/test_input_2.parquet",
+            "testfiles/test_output_concat.csv",
+        ],
+    )
+    saved_df = pd.read_csv("testfiles/test_output_concat.csv")
+    expected_df = pd.read_csv("testfiles/expected_output_concat.csv")
+    pd.testing.assert_frame_equal(saved_df, expected_df)
