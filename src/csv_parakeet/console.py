@@ -36,7 +36,9 @@ def p2c(file_in, file_out):
 
     \b
     Arguments:
-        FILE_IN: Path to a Parquet file
+        FILE_IN: Path to Parquet files. If more than one path is given the Parquet
+        files are concatenated together.
+
         FILE_OUT: Desired path for CSV output
     """
     pd.concat([pd.read_parquet(path) for path in file_in], ignore_index=True).to_csv(
