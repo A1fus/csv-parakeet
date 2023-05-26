@@ -12,17 +12,20 @@ def parakeet() -> None:
 
 
 @parakeet.command()
-@click.argument("file_in", type=click.Path(exists=True), nargs=1)
+@click.argument("file_in", type=click.Path(exists=True), nargs=-1)
 @click.argument("file_out", type=click.Path(), nargs=1)
 def c2p(file_in, file_out):
     """Convert a CSV file to parquet format
 
     \b
     Arguments:
-        FILE_IN: path to a csv file
-        FILE_OUT: desired path for parquet output
+        FILE_IN: Path to csv files. If more than one path is given the CSV files are
+        concatenated together.
+        FILE_OUT: Desired path for parquet output
     """
-    pd.read_csv(file_in).to_parquet(path=file_out, index=False)
+    pd.concat([pd.read_csv(path) for path in file_in], ignore_index=True).to_parquet(
+        path=file_out, index=False
+    )
 
 
 @parakeet.command()
