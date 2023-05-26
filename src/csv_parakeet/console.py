@@ -29,7 +29,7 @@ def c2p(file_in, file_out):
 
 
 @parakeet.command()
-@click.argument("file_in", type=click.Path(exists=True), nargs=1)
+@click.argument("file_in", type=click.Path(exists=True), nargs=-1)
 @click.argument("file_out", type=click.Path(), nargs=1)
 def p2c(file_in, file_out):
     """Convert a Parquet file to CSV format
@@ -39,4 +39,6 @@ def p2c(file_in, file_out):
         FILE_IN: Path to a Parquet file
         FILE_OUT: Desired path for CSV output
     """
-    pd.read_parquet(file_in).to_csv(path_or_buf=file_out, index=False)
+    pd.concat([pd.read_parquet(path) for path in file_in], ignore_index=True).to_csv(
+        path_or_buf=file_out, index=False
+    )
