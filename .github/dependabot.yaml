@@ -10,6 +10,8 @@ updates:
       prefix: "poetry prod"
       prefix-development: "poetry dev"
       include: "scope"
+    assignees:
+      - "a1fus"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -19,3 +21,5 @@ updates:
     commit-message:
       prefix: "github-actions"
       include: "scope"
+    assignees:
+      - "a1fus"
